@@ -1,6 +1,6 @@
 <h1>ExpNo 2 : Implement Depth First Search Traversal of a Graph</h1> 
-<h3>Name: </h3>
-<h3>Register Number:     </h3>
+<h3>Name:AAKASH K </h3>
+<h3>Register Number: 212224060001
 <H3>Aim:</H3>
 <p> To Implement Depth First Search Traversal of a Graph using Python 3.</p>
 <h3>Theory:</h3>
@@ -72,6 +72,34 @@ F H <BR>
 <hr>
 ['A', 'B', 'E', 'D', 'C', 'G', 'F', 'H']
 
+<h3>PROGRAM</h3>
+
+```
+#import defaultdict
+from collections import defaultdict
+def dfs(graph,start,visited,path):
+    path.append(start)
+    visited[start]=True
+    for neighbour in graph[start]:
+        if visited[neighbour]==False:
+            dfs(graph,neighbour,visited,path)
+            visited[neighbour]=True
+    return path
+graph=defaultdict(list)
+n,e=map(int,input().split())
+for i in range(e):
+    u,v=map(str,input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+#print(graph)
+start='A'
+visited=defaultdict(bool)
+path=[]
+traversedpath=dfs(graph,start,visited,path)
+print(traversedpath)
+```
+<h3>OUTPUT</h3>
+<img width="953" height="249" alt="image" src="https://github.com/user-attachments/assets/d274c766-9f78-4b06-97b4-e6d063774a49" />
 <hr>
 
 <hr>
@@ -87,6 +115,35 @@ F H <BR>
 <h3>Sample Output</h3>
 <hr>
 ['0', '1', '2', '3', '4']
+<h3>PROGRAM</h3>
+
+```
+#import defaultdict
+from collections import defaultdict
+def dfs(graph,start,visited,path):
+    path.append(start)
+    visited[start]=True
+    for neighbour in graph[start]:
+        if visited[neighbour]==False:
+            dfs(graph,neighbour,visited,path)
+            visited[neighbour]=True
+    return path
+graph=defaultdict(list)
+n,e=map(int,input().split())
+for i in range(e):
+    u,v=map(str,input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+#print(graph)
+start='0'
+visited=defaultdict(bool)
+path=[]
+traversedpath=dfs(graph,start,visited,path)
+print(traversedpath)
+
+```
+<h3>Output</h3>
+<img width="632" height="160" alt="image" src="https://github.com/user-attachments/assets/51ca9b6f-b6a2-43da-aff2-af495a30dd8c" />
 
 <hr>
 <h3>Result:</h3>
